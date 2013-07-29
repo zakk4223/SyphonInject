@@ -38,7 +38,7 @@ line utility called SyphonInjectCmd. Use that.
 
 YOU MUST BE ROOT (or in the procmod group) to mach_inject other processes. Just run the utility via 'sudo' and it'll
 work just fine. You also have to match the architecture of the target process. Instead of bothering to figure it out
-just try both. If you need to run the command as a 32-bit process just do 'sudo arch -i386 ./SyphonInjectCmd <pid>'.
+just try both. If you need to run the command as a 32-bit process just do 'sudo arch -i386 ./SyphonInjectCmd [pid]'.
 The command only takes one argument; the process id of the process you want to inject.
 
 The syphon server will start up as soon as you inject the code into the process. Ok, technically it starts on the next
