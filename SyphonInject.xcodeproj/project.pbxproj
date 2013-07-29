@@ -7,15 +7,142 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3435D6C117A33C86000FE9B5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3435D6C017A33C86000FE9B5 /* Foundation.framework */; };
+		3435D6C417A33C86000FE9B5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3435D6C317A33C86000FE9B5 /* main.m */; };
+		3435D6C817A33C86000FE9B5 /* SyphonInjectCmd.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3435D6C717A33C86000FE9B5 /* SyphonInjectCmd.1 */; };
+		3435D6CF17A33EC8000FE9B5 /* mach_inject_bundle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34BBE0E917A27C3E00053D83 /* mach_inject_bundle.framework */; };
+		3435D6D117A33F11000FE9B5 /* SyphonInjectCmd in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3435D6BF17A33C86000FE9B5 /* SyphonInjectCmd */; };
+		3435D6D517A3435F000FE9B5 /* mach_override.c in Sources */ = {isa = PBXBuildFile; fileRef = 3435D6D417A3435F000FE9B5 /* mach_override.c */; };
+		3435D6D917A39BA7000FE9B5 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3435D6D817A39BA7000FE9B5 /* OpenGL.framework */; };
+		3435D6F317A50022000FE9B5 /* JRSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 3435D6F217A50022000FE9B5 /* JRSwizzle.m */; };
 		34BBDF5117A254FB00053D83 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34BBDF5017A254FB00053D83 /* Cocoa.framework */; };
 		34BBDF5B17A254FB00053D83 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 34BBDF5917A254FB00053D83 /* InfoPlist.strings */; };
 		34BBDF5D17A254FB00053D83 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 34BBDF5C17A254FB00053D83 /* main.m */; };
 		34BBDF6117A254FB00053D83 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 34BBDF5F17A254FB00053D83 /* Credits.rtf */; };
 		34BBDF6417A254FB00053D83 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 34BBDF6317A254FB00053D83 /* AppDelegate.m */; };
 		34BBDF6717A254FB00053D83 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34BBDF6517A254FB00053D83 /* MainMenu.xib */; };
+		34BBDF6F17A2560300053D83 /* SyphonInjectController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34BBDF6E17A2560300053D83 /* SyphonInjectController.m */; };
+		34BBDF7517A25F2000053D83 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34BBDF5017A254FB00053D83 /* Cocoa.framework */; };
+		34BBDF7B17A25F2000053D83 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 34BBDF7917A25F2000053D83 /* InfoPlist.strings */; };
+		34BBDF8A17A263E100053D83 /* SyphonPayload.m in Sources */ = {isa = PBXBuildFile; fileRef = 34BBDF8917A263E100053D83 /* SyphonPayload.m */; };
+		34BBDF9C17A26B6C00053D83 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34BBDF9A17A26B5800053D83 /* Carbon.framework */; };
+		34BBDFA417A2733500053D83 /* SyphonPayload.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34BBDF7417A25F2000053D83 /* SyphonPayload.bundle */; };
+		34BBE0EC17A27C6400053D83 /* mach_inject_bundle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34BBE0E917A27C3E00053D83 /* mach_inject_bundle.framework */; };
+		34BBE0ED17A27CA100053D83 /* mach_inject_bundle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34BBE0E917A27C3E00053D83 /* mach_inject_bundle.framework */; };
+		34D0720D17A5A5540055FAA6 /* Syphon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34D0720A17A5A4D50055FAA6 /* Syphon.framework */; };
+		34D0720E17A5A5810055FAA6 /* Syphon.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34D0720A17A5A4D50055FAA6 /* Syphon.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		3435D6CC17A33E85000FE9B5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 34BBDF4517A254FB00053D83 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3435D6BE17A33C86000FE9B5;
+			remoteInfo = SyphonInjectCmd;
+		};
+		34BBDF9D17A26E2900053D83 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 34BBDF4517A254FB00053D83 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 34BBDF7317A25F2000053D83;
+			remoteInfo = SyphonPayload;
+		};
+		34BBE0E817A27C3E00053D83 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 34BBE0E317A27C3E00053D83 /* mach_inject_bundle.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DC2EF5B0486A6940098B216;
+			remoteInfo = mach_inject_bundle;
+		};
+		34BBE0EA17A27C5900053D83 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 34BBE0E317A27C3E00053D83 /* mach_inject_bundle.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
+			remoteInfo = mach_inject_bundle;
+		};
+		34D0720917A5A4D50055FAA6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 34D0720417A5A4D50055FAA6 /* Syphon.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DC2EF5B0486A6940098B216;
+			remoteInfo = Syphon;
+		};
+		34D0720B17A5A5450055FAA6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 34D0720417A5A4D50055FAA6 /* Syphon.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
+			remoteInfo = Syphon;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3435D6BD17A33C86000FE9B5 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				3435D6C817A33C86000FE9B5 /* SyphonInjectCmd.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		3435D6D017A33EF8000FE9B5 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 6;
+			files = (
+				3435D6D117A33F11000FE9B5 /* SyphonInjectCmd in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3435D6EF17A3DB69000FE9B5 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				34D0720E17A5A5810055FAA6 /* Syphon.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34BBDFA017A26E9800053D83 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+				34BBDFA417A2733500053D83 /* SyphonPayload.bundle in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34BBE0E117A27B1800053D83 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				34BBE0ED17A27CA100053D83 /* mach_inject_bundle.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		3435D6BF17A33C86000FE9B5 /* SyphonInjectCmd */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SyphonInjectCmd; sourceTree = BUILT_PRODUCTS_DIR; };
+		3435D6C017A33C86000FE9B5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3435D6C317A33C86000FE9B5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3435D6C617A33C86000FE9B5 /* SyphonInjectCmd-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SyphonInjectCmd-Prefix.pch"; sourceTree = "<group>"; };
+		3435D6C717A33C86000FE9B5 /* SyphonInjectCmd.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = SyphonInjectCmd.1; sourceTree = "<group>"; };
+		3435D6D317A342CE000FE9B5 /* mach_override.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mach_override.h; sourceTree = "<group>"; };
+		3435D6D417A3435F000FE9B5 /* mach_override.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mach_override.c; sourceTree = "<group>"; };
+		3435D6D617A39B8B000FE9B5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		3435D6D817A39BA7000FE9B5 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		3435D6F117A50022000FE9B5 /* JRSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRSwizzle.h; sourceTree = "<group>"; };
+		3435D6F217A50022000FE9B5 /* JRSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRSwizzle.m; sourceTree = "<group>"; };
 		34BBDF4D17A254FB00053D83 /* SyphonInject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SyphonInject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34BBDF5017A254FB00053D83 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		34BBDF5317A254FB00053D83 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -29,24 +156,81 @@
 		34BBDF6217A254FB00053D83 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		34BBDF6317A254FB00053D83 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		34BBDF6617A254FB00053D83 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		34BBDF6D17A2560300053D83 /* SyphonInjectController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SyphonInjectController.h; sourceTree = "<group>"; };
+		34BBDF6E17A2560300053D83 /* SyphonInjectController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SyphonInjectController.m; sourceTree = "<group>"; };
+		34BBDF7417A25F2000053D83 /* SyphonPayload.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SyphonPayload.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		34BBDF7817A25F2000053D83 /* SyphonPayload-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SyphonPayload-Info.plist"; sourceTree = "<group>"; };
+		34BBDF7A17A25F2000053D83 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		34BBDF7C17A25F2000053D83 /* SyphonPayload-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SyphonPayload-Prefix.pch"; sourceTree = "<group>"; };
+		34BBDF8817A263E100053D83 /* SyphonPayload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SyphonPayload.h; sourceTree = "<group>"; };
+		34BBDF8917A263E100053D83 /* SyphonPayload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SyphonPayload.m; sourceTree = "<group>"; };
+		34BBDF9A17A26B5800053D83 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
+		34BBE0E317A27C3E00053D83 /* mach_inject_bundle.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = mach_inject_bundle.xcodeproj; path = mach_inject/mach_inject_bundle/mach_inject_bundle.xcodeproj; sourceTree = "<group>"; };
+		34D0720417A5A4D50055FAA6 /* Syphon.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Syphon.xcodeproj; path = syphon/Syphon.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		3435D6BC17A33C86000FE9B5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3435D6CF17A33EC8000FE9B5 /* mach_inject_bundle.framework in Frameworks */,
+				3435D6C117A33C86000FE9B5 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		34BBDF4A17A254FB00053D83 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34BBE0EC17A27C6400053D83 /* mach_inject_bundle.framework in Frameworks */,
+				34BBDF9C17A26B6C00053D83 /* Carbon.framework in Frameworks */,
 				34BBDF5117A254FB00053D83 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34BBDF7117A25F2000053D83 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34D0720D17A5A5540055FAA6 /* Syphon.framework in Frameworks */,
+				3435D6D917A39BA7000FE9B5 /* OpenGL.framework in Frameworks */,
+				34BBDF7517A25F2000053D83 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3435D6C217A33C86000FE9B5 /* SyphonInjectCmd */ = {
+			isa = PBXGroup;
+			children = (
+				3435D6C317A33C86000FE9B5 /* main.m */,
+				3435D6C717A33C86000FE9B5 /* SyphonInjectCmd.1 */,
+				3435D6C517A33C86000FE9B5 /* Supporting Files */,
+			);
+			path = SyphonInjectCmd;
+			sourceTree = "<group>";
+		};
+		3435D6C517A33C86000FE9B5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3435D6C617A33C86000FE9B5 /* SyphonInjectCmd-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		34BBDF4417A254FB00053D83 = {
 			isa = PBXGroup;
 			children = (
+				34D0720417A5A4D50055FAA6 /* Syphon.xcodeproj */,
+				3435D6D817A39BA7000FE9B5 /* OpenGL.framework */,
+				3435D6D617A39B8B000FE9B5 /* CoreGraphics.framework */,
+				34BBE0E317A27C3E00053D83 /* mach_inject_bundle.xcodeproj */,
+				34BBDF9A17A26B5800053D83 /* Carbon.framework */,
 				34BBDF5617A254FB00053D83 /* SyphonInject */,
+				34BBDF7617A25F2000053D83 /* SyphonPayload */,
+				3435D6C217A33C86000FE9B5 /* SyphonInjectCmd */,
 				34BBDF4F17A254FB00053D83 /* Frameworks */,
 				34BBDF4E17A254FB00053D83 /* Products */,
 			);
@@ -56,6 +240,8 @@
 			isa = PBXGroup;
 			children = (
 				34BBDF4D17A254FB00053D83 /* SyphonInject.app */,
+				34BBDF7417A25F2000053D83 /* SyphonPayload.bundle */,
+				3435D6BF17A33C86000FE9B5 /* SyphonInjectCmd */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -64,6 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				34BBDF5017A254FB00053D83 /* Cocoa.framework */,
+				3435D6C017A33C86000FE9B5 /* Foundation.framework */,
 				34BBDF5217A254FB00053D83 /* Other Frameworks */,
 			);
 			name = Frameworks;
@@ -85,6 +272,8 @@
 				34BBDF6217A254FB00053D83 /* AppDelegate.h */,
 				34BBDF6317A254FB00053D83 /* AppDelegate.m */,
 				34BBDF6517A254FB00053D83 /* MainMenu.xib */,
+				34BBDF6D17A2560300053D83 /* SyphonInjectController.h */,
+				34BBDF6E17A2560300053D83 /* SyphonInjectController.m */,
 				34BBDF5717A254FB00053D83 /* Supporting Files */,
 			);
 			path = SyphonInject;
@@ -102,9 +291,66 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		34BBDF7617A25F2000053D83 /* SyphonPayload */ = {
+			isa = PBXGroup;
+			children = (
+				34BBDF7717A25F2000053D83 /* Supporting Files */,
+				34BBDF8817A263E100053D83 /* SyphonPayload.h */,
+				34BBDF8917A263E100053D83 /* SyphonPayload.m */,
+				3435D6D317A342CE000FE9B5 /* mach_override.h */,
+				3435D6D417A3435F000FE9B5 /* mach_override.c */,
+				3435D6F117A50022000FE9B5 /* JRSwizzle.h */,
+				3435D6F217A50022000FE9B5 /* JRSwizzle.m */,
+			);
+			path = SyphonPayload;
+			sourceTree = "<group>";
+		};
+		34BBDF7717A25F2000053D83 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				34BBDF7817A25F2000053D83 /* SyphonPayload-Info.plist */,
+				34BBDF7917A25F2000053D83 /* InfoPlist.strings */,
+				34BBDF7C17A25F2000053D83 /* SyphonPayload-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		34BBE0E417A27C3E00053D83 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				34BBE0E917A27C3E00053D83 /* mach_inject_bundle.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		34D0720517A5A4D50055FAA6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				34D0720A17A5A4D50055FAA6 /* Syphon.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		3435D6BE17A33C86000FE9B5 /* SyphonInjectCmd */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3435D6C917A33C86000FE9B5 /* Build configuration list for PBXNativeTarget "SyphonInjectCmd" */;
+			buildPhases = (
+				3435D6BB17A33C86000FE9B5 /* Sources */,
+				3435D6BC17A33C86000FE9B5 /* Frameworks */,
+				3435D6BD17A33C86000FE9B5 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SyphonInjectCmd;
+			productName = SyphonInjectCmd;
+			productReference = 3435D6BF17A33C86000FE9B5 /* SyphonInjectCmd */;
+			productType = "com.apple.product-type.tool";
+		};
 		34BBDF4C17A254FB00053D83 /* SyphonInject */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 34BBDF6A17A254FB00053D83 /* Build configuration list for PBXNativeTarget "SyphonInject" */;
@@ -112,15 +358,42 @@
 				34BBDF4917A254FB00053D83 /* Sources */,
 				34BBDF4A17A254FB00053D83 /* Frameworks */,
 				34BBDF4B17A254FB00053D83 /* Resources */,
+				34BBDFA017A26E9800053D83 /* CopyFiles */,
+				34BBE0E117A27B1800053D83 /* CopyFiles */,
+				3435D6D017A33EF8000FE9B5 /* CopyFiles */,
+				34BBE0F117A280A200053D83 /* ShellScript */,
+				3435D6D217A33F3F000FE9B5 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				3435D6CD17A33E85000FE9B5 /* PBXTargetDependency */,
+				34BBE0EB17A27C5900053D83 /* PBXTargetDependency */,
+				34BBDF9E17A26E2900053D83 /* PBXTargetDependency */,
 			);
 			name = SyphonInject;
 			productName = SyphonInject;
 			productReference = 34BBDF4D17A254FB00053D83 /* SyphonInject.app */;
 			productType = "com.apple.product-type.application";
+		};
+		34BBDF7317A25F2000053D83 /* SyphonPayload */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 34BBDF7D17A25F2000053D83 /* Build configuration list for PBXNativeTarget "SyphonPayload" */;
+			buildPhases = (
+				34BBDF7017A25F2000053D83 /* Sources */,
+				34BBDF7117A25F2000053D83 /* Frameworks */,
+				34BBDF7217A25F2000053D83 /* Resources */,
+				3435D6EF17A3DB69000FE9B5 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				34D0720C17A5A5450055FAA6 /* PBXTargetDependency */,
+			);
+			name = SyphonPayload;
+			productName = SyphonPayload;
+			productReference = 34BBDF7417A25F2000053D83 /* SyphonPayload.bundle */;
+			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
 
@@ -137,16 +410,47 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				English,
+				Japanese,
 			);
 			mainGroup = 34BBDF4417A254FB00053D83;
 			productRefGroup = 34BBDF4E17A254FB00053D83 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 34BBE0E417A27C3E00053D83 /* Products */;
+					ProjectRef = 34BBE0E317A27C3E00053D83 /* mach_inject_bundle.xcodeproj */;
+				},
+				{
+					ProductGroup = 34D0720517A5A4D50055FAA6 /* Products */;
+					ProjectRef = 34D0720417A5A4D50055FAA6 /* Syphon.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				34BBDF4C17A254FB00053D83 /* SyphonInject */,
+				34BBDF7317A25F2000053D83 /* SyphonPayload */,
+				3435D6BE17A33C86000FE9B5 /* SyphonInjectCmd */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		34BBE0E917A27C3E00053D83 /* mach_inject_bundle.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = mach_inject_bundle.framework;
+			remoteRef = 34BBE0E817A27C3E00053D83 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		34D0720A17A5A4D50055FAA6 /* Syphon.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Syphon.framework;
+			remoteRef = 34D0720917A5A4D50055FAA6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		34BBDF4B17A254FB00053D83 /* Resources */ = {
@@ -159,19 +463,99 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		34BBDF7217A25F2000053D83 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34BBDF7B17A25F2000053D83 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3435D6D217A33F3F000FE9B5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "install_name_tool -change @rpath/Frameworks/mach_inject_bundle.framework/Versions/A/mach_inject_bundle @executable_path/../Frameworks/mach_inject_bundle.framework/Versions/A/mach_inject_bundle ${TARGET_BUILD_DIR}/SyphonInject.app/Contents/MacOS/SyphonInjectCmd";
+		};
+		34BBE0F117A280A200053D83 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "install_name_tool -change @rpath/Frameworks/mach_inject_bundle.framework/Versions/A/mach_inject_bundle @executable_path/../Frameworks/mach_inject_bundle.framework/Versions/A/mach_inject_bundle ${TARGET_BUILD_DIR}/SyphonInject.app/Contents/MacOS/${TARGET_NAME}";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		3435D6BB17A33C86000FE9B5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3435D6C417A33C86000FE9B5 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		34BBDF4917A254FB00053D83 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				34BBDF5D17A254FB00053D83 /* main.m in Sources */,
 				34BBDF6417A254FB00053D83 /* AppDelegate.m in Sources */,
+				34BBDF6F17A2560300053D83 /* SyphonInjectController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34BBDF7017A25F2000053D83 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34BBDF8A17A263E100053D83 /* SyphonPayload.m in Sources */,
+				3435D6D517A3435F000FE9B5 /* mach_override.c in Sources */,
+				3435D6F317A50022000FE9B5 /* JRSwizzle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3435D6CD17A33E85000FE9B5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3435D6BE17A33C86000FE9B5 /* SyphonInjectCmd */;
+			targetProxy = 3435D6CC17A33E85000FE9B5 /* PBXContainerItemProxy */;
+		};
+		34BBDF9E17A26E2900053D83 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 34BBDF7317A25F2000053D83 /* SyphonPayload */;
+			targetProxy = 34BBDF9D17A26E2900053D83 /* PBXContainerItemProxy */;
+		};
+		34BBE0EB17A27C5900053D83 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = mach_inject_bundle;
+			targetProxy = 34BBE0EA17A27C5900053D83 /* PBXContainerItemProxy */;
+		};
+		34D0720C17A5A5450055FAA6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Syphon;
+			targetProxy = 34D0720B17A5A5450055FAA6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		34BBDF5917A254FB00053D83 /* InfoPlist.strings */ = {
@@ -198,9 +582,41 @@
 			name = MainMenu.xib;
 			sourceTree = "<group>";
 		};
+		34BBDF7917A25F2000053D83 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				34BBDF7A17A25F2000053D83 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		3435D6CA17A33C86000FE9B5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SyphonInjectCmd/SyphonInjectCmd-Prefix.pch";
+				HEADER_SEARCH_PATHS = "mach_inject/**";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3435D6CB17A33C86000FE9B5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SyphonInjectCmd/SyphonInjectCmd-Prefix.pch";
+				HEADER_SEARCH_PATHS = "mach_inject/**";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		34BBDF6817A254FB00053D83 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -263,9 +679,12 @@
 		34BBDF6B17A254FB00053D83 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = NO;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SyphonInject/SyphonInject-Prefix.pch";
+				HEADER_SEARCH_PATHS = "mach_inject/**";
 				INFOPLIST_FILE = "SyphonInject/SyphonInject-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -275,18 +694,66 @@
 		34BBDF6C17A254FB00053D83 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = NO;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SyphonInject/SyphonInject-Prefix.pch";
+				HEADER_SEARCH_PATHS = "mach_inject/**";
 				INFOPLIST_FILE = "SyphonInject/SyphonInject-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
 		};
+		34BBDF7E17A25F2000053D83 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SyphonPayload/SyphonPayload-Prefix.pch";
+				INFOPLIST_FILE = "SyphonPayload/SyphonPayload-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		34BBDF7F17A25F2000053D83 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SyphonPayload/SyphonPayload-Prefix.pch";
+				INFOPLIST_FILE = "SyphonPayload/SyphonPayload-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3435D6C917A33C86000FE9B5 /* Build configuration list for PBXNativeTarget "SyphonInjectCmd" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3435D6CA17A33C86000FE9B5 /* Debug */,
+				3435D6CB17A33C86000FE9B5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		34BBDF4817A254FB00053D83 /* Build configuration list for PBXProject "SyphonInject" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -303,6 +770,16 @@
 				34BBDF6C17A254FB00053D83 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		34BBDF7D17A25F2000053D83 /* Build configuration list for PBXNativeTarget "SyphonPayload" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				34BBDF7E17A25F2000053D83 /* Debug */,
+				34BBDF7F17A25F2000053D83 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

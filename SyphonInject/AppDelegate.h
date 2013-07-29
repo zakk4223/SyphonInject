@@ -7,8 +7,12 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "SyphonInjectController.h"
+
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
+
+@property (assign) IBOutlet SyphonInjectController* syphoninjectcontroller;
 
 @property (assign) IBOutlet NSWindow *window;
 
