@@ -1,6 +1,9 @@
 SyphonInject
 ============
 
+
+****BINARIES HERE**** http://krylon.rsdio.com/zakk/syphoninject/
+
 Syphonize an application at runtime
 
 
@@ -9,7 +12,7 @@ Ever wished that a random opengl application would serve its frames via Syphon? 
 What is this?
 
 
-SyphonInject is a OSX command line utility that uses mach_inject, mach_override and JRSwizzle to insert a Syphon 
+SyphonInject is a OSX utility that uses Scripting Additions or mach_inject, mach_override and JRSwizzle to insert a Syphon 
 server into a running process. It'll only work for applications that are doing OpenGL based rendering.
 
 
@@ -33,13 +36,11 @@ between them constantly. That probably isn't what you want.
 
 How do I use it?
 
-First: ignore the GUI application it builds. It doesn't do anything useful. Inside the application bundle is a command
-line utility called SyphonInjectCmd. Use that.
+First: Install the pkg. This installs the SyphonInject application and the Scripting Addition bundle. The Scripting Addition
+is installed into /Library/ScriptingAdditions
 
-YOU MUST BE ROOT (or in the procmod group) to mach_inject other processes. Just run the utility via 'sudo' and it'll
-work just fine. You also have to match the architecture of the target process. Instead of bothering to figure it out
-just try both. If you need to run the command as a 32-bit process just do 'sudo arch -i386 ./SyphonInjectCmd [pid]'.
-The command only takes one argument; the process id of the process you want to inject.
+Once this is done launch SyphonInject. You'll see a list of processes, select the one (or multiple..) you want and click the
+"Inject" button. That's it.
 
 The syphon server will start up as soon as you inject the code into the process. Ok, technically it starts on the next
 call to the overridden functions, but that's close enough.
@@ -53,23 +54,20 @@ Quit the application you injected the server into. Once it is injected it cannot
 
 Todo:
 
-1) Considering using Scripting Additions to inject the SyphonPayload. The advantages here are that it doesn't require
-   root privileges and it means you can just start the Syphon server via an applescript command. Possibly you'll be able
-   to stop it too, but I'm not sure. The downside is that not all apps support AppleScript/Scripting Additions, but I'm
-   not sure how many do or don't. 
+
  
-2) If not using scripting additions, figure out all the crazy SMJobBless stuff that is required to run things with
+1) If not using scripting additions, figure out all the crazy SMJobBless stuff that is required to run things with
    elevated privs. I think it requires an actual Apple Dev account, though. And appears to be a pain in the ass.
    
-3) Figure out if there's a way to get non-OpenGL applications into this. I have some ideas...
+2) Figure out if there's a way to get non-OpenGL applications into this. I have some ideas...
 
-4) Limit it to specific windows if the application has multiple ones.
+3) Limit it to specific windows if the application has multiple ones.
 
-5) Ability Force a width/height if you know it gets it wrong all the time for a particular application.
+4) Ability Force a width/height if you know it gets it wrong all the time for a particular application.
 
-6) Framerate limiter/don't send if no clients are connected.
+5) Framerate limiter/don't send if no clients are connected.
 
-7) What secrets does WindowServer hold....?
+6) What secrets does WindowServer hold....?
 
 
 
