@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dictionary SYSTEM "file://localhost/System/Library/DTDs/sdef.dtd">
+<dictionary title="SASyphonInjector Terminology">
+    <suite name="SASyphonInjector Suite" code="SASI" description="Syphon Injector commands">
+        <command name="init SyphonInjector" code="SASIinjc" description="Install SyphonPayload into the process"/>
+    </suite>
+</dictionary>

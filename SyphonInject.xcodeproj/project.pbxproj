@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		341B3E1117A92F2B0056A28C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34BBDF5017A254FB00053D83 /* Cocoa.framework */; };
+		341B3E1717A92F2B0056A28C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 341B3E1517A92F2B0056A28C /* InfoPlist.strings */; };
+		341B3E1F17A932180056A28C /* SASyphonInjector.sdef in Resources */ = {isa = PBXBuildFile; fileRef = 341B3E1E17A932180056A28C /* SASyphonInjector.sdef */; };
+		341B3E2217A9373B0056A28C /* SASyphonInjector.m in Sources */ = {isa = PBXBuildFile; fileRef = 341B3E2117A9373B0056A28C /* SASyphonInjector.m */; };
+		341B3E2617A93D1E0056A28C /* SyphonPayload.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34BBDF7417A25F2000053D83 /* SyphonPayload.bundle */; };
+		341B3E2A17AEB8710056A28C /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 341B3E2917AEB8710056A28C /* ScriptingBridge.framework */; };
 		3435D6C117A33C86000FE9B5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3435D6C017A33C86000FE9B5 /* Foundation.framework */; };
 		3435D6C417A33C86000FE9B5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3435D6C317A33C86000FE9B5 /* main.m */; };
 		3435D6C817A33C86000FE9B5 /* SyphonInjectCmd.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3435D6C717A33C86000FE9B5 /* SyphonInjectCmd.1 */; };
@@ -34,6 +40,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		341B3E2317A93C9E0056A28C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 34BBDF4517A254FB00053D83 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 34BBDF7317A25F2000053D83;
+			remoteInfo = SyphonPayload;
+		};
+		341B3E2717A93D280056A28C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 34BBDF4517A254FB00053D83 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 341B3E0F17A92F2B0056A28C;
+			remoteInfo = SASyphonInjector.osax;
+		};
 		3435D6CC17A33E85000FE9B5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 34BBDF4517A254FB00053D83 /* Project object */;
@@ -79,6 +99,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		341B3E2517A93CF20056A28C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+				341B3E2617A93D1E0056A28C /* SyphonPayload.bundle in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3435D6BD17A33C86000FE9B5 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -132,6 +162,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		341B3E1017A92F2B0056A28C /* SASyphonInjector.osax.osax */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = SASyphonInjector.osax.osax; path = SASyphonInjector.osax; sourceTree = BUILT_PRODUCTS_DIR; };
+		341B3E1417A92F2B0056A28C /* SASyphonInjector-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SASyphonInjector-Info.plist"; sourceTree = "<group>"; };
+		341B3E1617A92F2B0056A28C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		341B3E1817A92F2B0056A28C /* SASyphonInjector-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SASyphonInjector-Prefix.pch"; sourceTree = "<group>"; };
+		341B3E1E17A932180056A28C /* SASyphonInjector.sdef */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SASyphonInjector.sdef; sourceTree = "<group>"; };
+		341B3E2017A9373B0056A28C /* SASyphonInjector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SASyphonInjector.h; sourceTree = "<group>"; };
+		341B3E2117A9373B0056A28C /* SASyphonInjector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SASyphonInjector.m; sourceTree = "<group>"; };
+		341B3E2917AEB8710056A28C /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
 		3435D6BF17A33C86000FE9B5 /* SyphonInjectCmd */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SyphonInjectCmd; sourceTree = BUILT_PRODUCTS_DIR; };
 		3435D6C017A33C86000FE9B5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3435D6C317A33C86000FE9B5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -170,6 +208,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		341B3E0D17A92F2B0056A28C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				341B3E1117A92F2B0056A28C /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3435D6BC17A33C86000FE9B5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -183,6 +229,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				341B3E2A17AEB8710056A28C /* ScriptingBridge.framework in Frameworks */,
 				34BBE0EC17A27C6400053D83 /* mach_inject_bundle.framework in Frameworks */,
 				34BBDF9C17A26B6C00053D83 /* Carbon.framework in Frameworks */,
 				34BBDF5117A254FB00053D83 /* Cocoa.framework in Frameworks */,
@@ -202,6 +249,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		341B3E1217A92F2B0056A28C /* SASyphonInjector */ = {
+			isa = PBXGroup;
+			children = (
+				341B3E1317A92F2B0056A28C /* Supporting Files */,
+				341B3E2017A9373B0056A28C /* SASyphonInjector.h */,
+				341B3E2117A9373B0056A28C /* SASyphonInjector.m */,
+			);
+			path = SASyphonInjector;
+			sourceTree = "<group>";
+		};
+		341B3E1317A92F2B0056A28C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				341B3E1417A92F2B0056A28C /* SASyphonInjector-Info.plist */,
+				341B3E1517A92F2B0056A28C /* InfoPlist.strings */,
+				341B3E1817A92F2B0056A28C /* SASyphonInjector-Prefix.pch */,
+				341B3E1E17A932180056A28C /* SASyphonInjector.sdef */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		3435D6C217A33C86000FE9B5 /* SyphonInjectCmd */ = {
 			isa = PBXGroup;
 			children = (
@@ -223,6 +291,7 @@
 		34BBDF4417A254FB00053D83 = {
 			isa = PBXGroup;
 			children = (
+				341B3E2917AEB8710056A28C /* ScriptingBridge.framework */,
 				34D0720417A5A4D50055FAA6 /* Syphon.xcodeproj */,
 				3435D6D817A39BA7000FE9B5 /* OpenGL.framework */,
 				3435D6D617A39B8B000FE9B5 /* CoreGraphics.framework */,
@@ -231,6 +300,7 @@
 				34BBDF5617A254FB00053D83 /* SyphonInject */,
 				34BBDF7617A25F2000053D83 /* SyphonPayload */,
 				3435D6C217A33C86000FE9B5 /* SyphonInjectCmd */,
+				341B3E1217A92F2B0056A28C /* SASyphonInjector */,
 				34BBDF4F17A254FB00053D83 /* Frameworks */,
 				34BBDF4E17A254FB00053D83 /* Products */,
 			);
@@ -242,6 +312,7 @@
 				34BBDF4D17A254FB00053D83 /* SyphonInject.app */,
 				34BBDF7417A25F2000053D83 /* SyphonPayload.bundle */,
 				3435D6BF17A33C86000FE9B5 /* SyphonInjectCmd */,
+				341B3E1017A92F2B0056A28C /* SASyphonInjector.osax.osax */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -334,6 +405,25 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		341B3E0F17A92F2B0056A28C /* SASyphonInjector */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 341B3E1C17A92F2B0056A28C /* Build configuration list for PBXNativeTarget "SASyphonInjector" */;
+			buildPhases = (
+				341B3E0C17A92F2B0056A28C /* Sources */,
+				341B3E0D17A92F2B0056A28C /* Frameworks */,
+				341B3E0E17A92F2B0056A28C /* Resources */,
+				341B3E2517A93CF20056A28C /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				341B3E2417A93C9E0056A28C /* PBXTargetDependency */,
+			);
+			name = SASyphonInjector;
+			productName = SASyphonInjector;
+			productReference = 341B3E1017A92F2B0056A28C /* SASyphonInjector.osax.osax */;
+			productType = "com.apple.product-type.bundle";
+		};
 		3435D6BE17A33C86000FE9B5 /* SyphonInjectCmd */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3435D6C917A33C86000FE9B5 /* Build configuration list for PBXNativeTarget "SyphonInjectCmd" */;
@@ -367,6 +457,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				341B3E2817A93D280056A28C /* PBXTargetDependency */,
 				3435D6CD17A33E85000FE9B5 /* PBXTargetDependency */,
 				34BBE0EB17A27C5900053D83 /* PBXTargetDependency */,
 				34BBDF9E17A26E2900053D83 /* PBXTargetDependency */,
@@ -431,6 +522,7 @@
 				34BBDF4C17A254FB00053D83 /* SyphonInject */,
 				34BBDF7317A25F2000053D83 /* SyphonPayload */,
 				3435D6BE17A33C86000FE9B5 /* SyphonInjectCmd */,
+				341B3E0F17A92F2B0056A28C /* SASyphonInjector */,
 			);
 		};
 /* End PBXProject section */
@@ -453,6 +545,15 @@
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
+		341B3E0E17A92F2B0056A28C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				341B3E1717A92F2B0056A28C /* InfoPlist.strings in Resources */,
+				341B3E1F17A932180056A28C /* SASyphonInjector.sdef in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		34BBDF4B17A254FB00053D83 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -504,6 +605,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		341B3E0C17A92F2B0056A28C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				341B3E2217A9373B0056A28C /* SASyphonInjector.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3435D6BB17A33C86000FE9B5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -535,6 +644,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		341B3E2417A93C9E0056A28C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 34BBDF7317A25F2000053D83 /* SyphonPayload */;
+			targetProxy = 341B3E2317A93C9E0056A28C /* PBXContainerItemProxy */;
+		};
+		341B3E2817A93D280056A28C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 341B3E0F17A92F2B0056A28C /* SASyphonInjector */;
+			targetProxy = 341B3E2717A93D280056A28C /* PBXContainerItemProxy */;
+		};
 		3435D6CD17A33E85000FE9B5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 3435D6BE17A33C86000FE9B5 /* SyphonInjectCmd */;
@@ -558,6 +677,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		341B3E1517A92F2B0056A28C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				341B3E1617A92F2B0056A28C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		34BBDF5917A254FB00053D83 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -593,6 +720,36 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		341B3E1917A92F2B0056A28C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SASyphonInjector/SASyphonInjector-Prefix.pch";
+				INFOPLIST_FILE = "SASyphonInjector/SASyphonInjector-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/ScriptingAdditions";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = osax;
+			};
+			name = Debug;
+		};
+		341B3E1A17A92F2B0056A28C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SASyphonInjector/SASyphonInjector-Prefix.pch";
+				INFOPLIST_FILE = "SASyphonInjector/SASyphonInjector-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/ScriptingAdditions";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = osax;
+			};
+			name = Release;
+		};
 		3435D6CA17A33C86000FE9B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -679,14 +836,16 @@
 		34BBDF6B17A254FB00053D83 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_ARC = NO;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SyphonInject/SyphonInject-Prefix.pch";
 				HEADER_SEARCH_PATHS = "mach_inject/**";
 				INFOPLIST_FILE = "SyphonInject/SyphonInject-Info.plist";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.8;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -694,14 +853,16 @@
 		34BBDF6C17A254FB00053D83 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_ARC = NO;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SyphonInject/SyphonInject-Prefix.pch";
 				HEADER_SEARCH_PATHS = "mach_inject/**";
 				INFOPLIST_FILE = "SyphonInject/SyphonInject-Info.plist";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.8;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -745,6 +906,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		341B3E1C17A92F2B0056A28C /* Build configuration list for PBXNativeTarget "SASyphonInjector" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				341B3E1917A92F2B0056A28C /* Debug */,
+				341B3E1A17A92F2B0056A28C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		3435D6C917A33C86000FE9B5 /* Build configuration list for PBXNativeTarget "SyphonInjectCmd" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

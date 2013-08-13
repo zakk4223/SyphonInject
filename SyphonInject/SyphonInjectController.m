@@ -10,7 +10,7 @@
 #import <mach_inject_bundle.h>
 #import <load_bundle.h>
 #import <mach-o/dyld.h>
-
+#import <ScriptingBridge/ScriptingBridge.h>
 
 
 @implementation SyphonInjectController
@@ -19,39 +19,98 @@
 
 
 
+- (id) init
+{
+    if (self = [super init])
+    {
+    
+        self.sharedWorkspace = [NSWorkspace sharedWorkspace];
+        self.runningApplications = [self.sharedWorkspace runningApplications];
+        [[self.sharedWorkspace notificationCenter] addObserver:self
+                                           selector:@selector(appLaunched:)
+                                               name:NSWorkspaceDidLaunchApplicationNotification
+                                             object:self.sharedWorkspace];
+        
+    }
+    return self;
+    
+    
+    
+    
+}
+
+
+-(void) appLaunched:(NSNotification *)notification
+{
+    NSDictionary *userInfo = [notification userInfo];
+    
+    NSString *bundleId = [userInfo objectForKey:@"NSApplicationBundleIdentifier"];
+    
+    NSLog(@"BUNDLE ID %@", bundleId);
+    
+    
+    pid_t pid = [[userInfo objectForKey:@"NSApplicationProcessIdentifier"] intValue];
+    
+    
+    NSLog(@"PROC ID %d", pid);
+    
+    
+    SBApplication *sbapp = [SBApplication applicationWithProcessIdentifier:pid];
+    
+    [sbapp setDelegate:self];
+    
+    
+    /*
+     NSString *scriptString = [[NSString alloc] initWithFormat:@"tell application \"%s\" to «event SASIinjc»", [self.injectTarget.localizedName UTF8String]];
+     
+     
+     NSAppleScript *scriptObj = [[NSAppleScript alloc] initWithSource:scriptString];
+     
+     [scriptObj executeAndReturnError:nil];
+     */
+    
+    
+    //[sbapp setTimeout:10*60];
+    
+    //[sbapp setSendMode:kAEWaitReply];
+    //[sbapp sendEvent:'ascr' id:'gdut' parameters:0];
+//    [sbapp setSendMode:kAENoReply];
+  //  [sbapp sendEvent:'SASI' id:'injc' parameters:0];
+
+    
+    
+}
+- (void)eventDidFail:(const AppleEvent *)event withError:(NSError *)error
+{
+        
+    return;
+}
 
 - (IBAction)doInject:(id)sender
 {
     
+    for (NSRunningApplication *toInject in applicationArrayController.selectedObjects)
+    {
+        
     
-    NSLog(@" load bundle undefined symbol %d", err_load_bundle_undefined_symbol);
-    
-	NSLog(@"load bundle link failed %d", err_load_bundle_link_failed);
-	NSLog(@"load bundle url from path %d", err_load_bundle_url_from_path);
-    NSLog(@"load bundle create bundle %d",err_load_bundle_create_bundle);
-	NSLog(@" load bundle package exec url %d", err_load_bundle_package_executable_url);
-	NSLog(@" load bundle path from url %d", err_load_bundle_path_from_url);
-    NSLog(@" load bundle NSObjectFileImageFailure %d", err_load_bundle_NSObjectFileImageFailure);
-    NSLog(@" load bundle NSObjectFileImageInappropriateFile %d",err_load_bundle_NSObjectFileImageInappropriateFile);
-    NSLog(@" load bundle NSObjectFileImageArch %d", err_load_bundle_NSObjectFileImageArch);
-    NSLog(@" load bundle NSObjectFileImageFormat %d", err_load_bundle_NSObjectFileImageFormat);
-    NSLog(@" load bundle NSObjectFileImageAccess %d",  err_load_bundle_NSObjectFileImageAccess);
-
-    NSLog(@"WILL INJECT INTO PID %d", self.injectPID);
-    
-    NSString *bundlePath = [[NSBundle mainBundle] pathForResource:@"SyphonPayload" ofType:@"bundle"];
-    
-    mach_error_t err;
-    
-    NSLog(@"Bundle path: %@", bundlePath);
-    err = mach_inject_bundle_pid([bundlePath fileSystemRepresentation], self.injectPID);
-    
-    if (err == err_none) {
-        NSLog(@"Inject successful!");
-    } else {
-        NSLog(@"Inject error: %d", err);
+        NSLog(@"WILL INJECT INTO APPLICATION %s", [toInject.localizedName UTF8String]);
+        
+        pid_t pid = toInject.processIdentifier;
+        
+        SBApplication *sbapp = [SBApplication applicationWithProcessIdentifier:pid];
+        
+        [sbapp setDelegate:self];
+        
+        
+        
+        
+        [sbapp setTimeout:10*60];
+        
+        [sbapp setSendMode:kAEWaitReply];
+        [sbapp sendEvent:'ascr' id:'gdut' parameters:0];
+        [sbapp setSendMode:kAENoReply];
+        [sbapp sendEvent:'SASI' id:'injc' parameters:0];
     }
-    
     
 }
 
