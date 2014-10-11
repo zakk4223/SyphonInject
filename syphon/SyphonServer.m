@@ -310,7 +310,7 @@ static void finalizer()
 {
 #if !SYPHON_DEBUG_NO_DRAWING
 	// flush to make sure IOSurface updates are seen globally.
-	glFlushRenderAPPLE();
+	//glFlushRenderAPPLE();
 	
 	// restore state
 	glBindFramebufferEXT(GL_FRAMEBUFFER_EXT, _previousFBO);	

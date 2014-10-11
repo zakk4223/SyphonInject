@@ -162,7 +162,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		341B3E1017A92F2B0056A28C /* SASyphonInjector.osax.osax */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = SASyphonInjector.osax.osax; path = SASyphonInjector.osax; sourceTree = BUILT_PRODUCTS_DIR; };
+		341B3E1017A92F2B0056A28C /* SASyphonInjector.osax */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SASyphonInjector.osax; sourceTree = BUILT_PRODUCTS_DIR; };
 		341B3E1417A92F2B0056A28C /* SASyphonInjector-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SASyphonInjector-Info.plist"; sourceTree = "<group>"; };
 		341B3E1617A92F2B0056A28C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		341B3E1817A92F2B0056A28C /* SASyphonInjector-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SASyphonInjector-Prefix.pch"; sourceTree = "<group>"; };
@@ -312,7 +312,7 @@
 				34BBDF4D17A254FB00053D83 /* SyphonInject.app */,
 				34BBDF7417A25F2000053D83 /* SyphonPayload.bundle */,
 				3435D6BF17A33C86000FE9B5 /* SyphonInjectCmd */,
-				341B3E1017A92F2B0056A28C /* SASyphonInjector.osax.osax */,
+				341B3E1017A92F2B0056A28C /* SASyphonInjector.osax */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -421,7 +421,7 @@
 			);
 			name = SASyphonInjector;
 			productName = SASyphonInjector;
-			productReference = 341B3E1017A92F2B0056A28C /* SASyphonInjector.osax.osax */;
+			productReference = 341B3E1017A92F2B0056A28C /* SASyphonInjector.osax */;
 			productType = "com.apple.product-type.bundle";
 		};
 		3435D6BE17A33C86000FE9B5 /* SyphonInjectCmd */ = {
