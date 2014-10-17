@@ -26,11 +26,21 @@
 #import "SASyphonInjector.h"
 #import <Cocoa/Cocoa.h>
 
+
 @interface SyphonPayload: NSObject 
     
     + (void) load;
+    +(void) handleFlip;
++(void) setWidth:(int)width height:(int)height;
++(void) setOffsetX:(int)x OffsetY:(int)y;
++(void) changeBuffer;
+
+
 
 @end
+
+
+static Class injectedClass;
 
 
 @implementation SASyphonInjector
@@ -38,6 +48,41 @@
 @end
 
 
+OSErr SASIhandleChbf(const AppleEvent *ev, AppleEvent *reply, long refcon)
+{
+    [injectedClass changeBuffer];
+}
+
+
+OSErr SASIhandleOfst(const AppleEvent *ev, AppleEvent *reply, long refcon)
+{
+    int x = 0;
+    int y = 0;
+    
+    AEGetParamPtr(ev, 'xofs', typeSInt32, NULL, &x, sizeof(x), NULL);
+    AEGetParamPtr(ev, 'yofs', typeSInt32, NULL, &y, sizeof(y), NULL);
+
+    [injectedClass setOffsetX:x OffsetY:y];
+    return noErr;
+}
+
+
+OSErr SASIhandleReso(const AppleEvent *ev, AppleEvent *reply, long refcon)
+{
+
+    int width = 0;
+    int height = 0;
+    
+    AEGetParamPtr(ev, 'wdth', typeSInt32, NULL, &width, sizeof(width), NULL);
+    AEGetParamPtr(ev, 'hght', typeSInt32, NULL, &height, sizeof(height), NULL);
+
+
+    [injectedClass setWidth:width height:height];
+    
+    
+    
+    return noErr;
+}
 
 
 
@@ -64,6 +109,8 @@ OSErr SASIhandleInject(const AppleEvent *ev, AppleEvent *reply, long refcon) {
         NSLog(@"Couldn't load SyphonPayload!");
         return 2;
     }
+    
+    injectedClass = [SyphonPayloadBundle principalClass];
     
     /*
     SyphonPayload *injectedClass = (SyphonPayload *)[SyphonPayloadBundle principalClass];

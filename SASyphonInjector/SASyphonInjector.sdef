@@ -3,5 +3,18 @@
 <dictionary title="SASyphonInjector Terminology">
     <suite name="SASyphonInjector Suite" code="SASI" description="Syphon Injector commands">
         <command name="init SyphonInjector" code="SASIinjc" description="Install SyphonPayload into the process"/>
+        <command name="flip SyphonInject image" code="SASIflip" description="Flip published Syphon image"/>
+        <command name="change SyphonInject resolution" code="SASIreso" description="Change resolution of injected surface">
+            <parameter name="width" code="wdth" type="integer" optional="no"/>
+            <parameter name="height" code="hght" type="integer" optional="no"/>
+        </command>
+        <command name="change SyphonInject offset" code="SASIofst" description="Change ofset of injected surface">
+            <parameter name="xoffset" code="xofs" type="integer" optional="no"/>
+            <parameter name="yoffset" code="yofs" type="integer" optional="no"/>
+        </command>
+        
+        <command name="change SyphonInject capture buffer" code="SASIchbf"/>
+        
+
     </suite>
 </dictionary>

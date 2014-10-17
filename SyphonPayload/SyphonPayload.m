@@ -40,6 +40,11 @@ static SyphonServer *_syphonServer = nil;
 int wait_for_nsopengl = 0;
 int nsopengl_called = 0;
 NSSize saved_frame_size;
+int forced_width = 0;
+int forced_height = 0;
+GLint texture_x_offset = 0;
+GLint texture_y_offset = 0;
+GLenum capture_buffer = GL_FRONT;
 
 
 
@@ -55,12 +60,19 @@ CGLFlushDrawableProc orig_CGLFlushDrawable;
 void __SyphonInjectorPublish(CGLContextObj for_ctx, NSSize texture_size)
 {
     
+    GLint saved_texture;
+    glGetIntegerv(GL_TEXTURE_BINDING_RECTANGLE_EXT, &saved_texture);
+    
     
     if (!_syphonServer)
     {
+        
         _syphonServer = [[SyphonServer alloc] initWithName:@"InjectedSyphon" context:for_ctx options:nil];
+        
+        
     }
 
+    
     
     SyphonImage *sImage = [_syphonServer newFrameImage];
     
@@ -89,53 +101,35 @@ void __SyphonInjectorPublish(CGLContextObj for_ctx, NSSize texture_size)
     
     
     
-    GLint saved_texture;
+    
     
     glGetIntegerv(GL_READ_BUFFER, &savedReadBuf);
     
-    glReadBuffer(GL_FRONT);
+    glReadBuffer(capture_buffer);
     
     
-    glGetIntegerv(GL_TEXTURE_BINDING_RECTANGLE_ARB, &saved_texture);
+    
+    glBindTexture(GL_TEXTURE_RECTANGLE_EXT, [sImage textureName]);
     
     
-    glBindTexture(GL_TEXTURE_RECTANGLE_ARB, [sImage textureName]);
-    glCopyTexSubImage2D(GL_TEXTURE_RECTANGLE_ARB, 0, 0, 0, 0,0, texture_size.width, texture_size.height);
-
+    
+    
+    glCopyTexSubImage2D(GL_TEXTURE_RECTANGLE_EXT, 0, 0,0,texture_x_offset, texture_y_offset, texture_size.width, texture_size.height);
+    
     [_syphonServer bindToDrawFrameOfSize:texture_size];
     [_syphonServer unbindAndPublish];
 
+    glBindTexture(GL_TEXTURE_RECTANGLE_EXT, saved_texture);
+    
     [sImage release];
+
     glReadBuffer(savedReadBuf);
-    glBindTexture(GL_TEXTURE_RECTANGLE_ARB, saved_texture);
+    
     
     
 
     
 }
-
-void SyphonDrawMouse()
-{
-    
-    glClearColor(0.0, 0.0, 0.0, 0.0);
-    glClear(GL_COLOR_BUFFER_BIT);
-
-    //glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-    //glEnable(GL_BLEND);
-    glDisable(GL_DEPTH_TEST);
-    
-    glBegin(GL_QUADS);
-    glColor3f(1.0f, 0.0f, 0.0f);
-    glVertex2f(320.0f, 200.0f);     // Define vertices in counter-clockwise (CCW) order
-    glVertex2f(320.0f-20.0f, 200.0f);     //  so that the normal (front-face) is facing you
-    glVertex2f(320.0f-20.0f, 200.0f+20.0f);
-    glVertex2f(320.0f, 200.0f+20.0f);
-    glEnd();
-    //glDisable(GL_BLEND);
-    glEnable(GL_DEPTH_TEST);
-    
-}
-
 
 
 @interface NSOpenGLContext (NSOpenGLContextSyphon)
@@ -145,6 +139,7 @@ void SyphonDrawMouse()
 
 
 @end
+
 
 
 @implementation NSOpenGLContext (NSOpenGLContextSyphon)
@@ -157,10 +152,26 @@ void SyphonDrawMouse()
     CGLContextObj ctx = [self CGLContextObj];
     
     nsopengl_called = 1;
-    NSSize my_size = self.view.bounds.size;
+    NSSize my_size;
+    if (forced_height > 0 && forced_width > 0)
+    {
+        my_size = NSMakeSize(forced_width, forced_height);
+    } else {
+        
+        my_size = self.view.bounds.size;
+    }
+
+    if (capture_buffer == GL_BACK)
+    {
+        __SyphonInjectorPublish(ctx, my_size);
+    }
+
     [self flushBufferSyphon];
     
-    __SyphonInjectorPublish(ctx, my_size);
+    if (capture_buffer == GL_FRONT)
+    {
+        __SyphonInjectorPublish(ctx, my_size);
+    }
 }
 @end
 
@@ -185,14 +196,32 @@ CGLError CGLFlushDrawableOverride(CGLContextObj ctx)
     GLint renderBufDim[4];
 
     GLint savedReadBuf;
+    NSSize my_size;
     
-    glGetIntegerv(GL_VIEWPORT, renderBufDim);
+    if (forced_height > 0 && forced_width > 0)
+    {
+        my_size = NSMakeSize(forced_width, forced_height);
+    } else {
+        glGetIntegerv(GL_VIEWPORT, renderBufDim);
     
-    NSSize my_size = NSMakeSize(renderBufDim[2], renderBufDim[3]);
+        my_size = NSMakeSize(renderBufDim[2], renderBufDim[3]);
+    }
+    
+    
+    if (capture_buffer == GL_BACK)
+    {
+        __SyphonInjectorPublish(ctx, my_size);
+    }
     
     CGLError ret = orig_CGLFlushDrawable(ctx);
+    
+    if (capture_buffer == GL_FRONT)
+    {
+        __SyphonInjectorPublish(ctx, my_size);
+    }
 
-    __SyphonInjectorPublish(ctx, my_size);
+
+
     
     return ret;
     
@@ -203,6 +232,38 @@ CGLError CGLFlushDrawableOverride(CGLContextObj ctx)
 
 
 @implementation SyphonPayload
+
+
++(void) setOffsetX:(int)x OffsetY:(int)y
+{
+    texture_x_offset = x;
+    texture_y_offset = y;
+}
+
+
++(void) setWidth:(int)width height:(int)height
+{
+    
+    forced_width = width;
+    forced_height = height;
+}
+
++(void) changeBuffer
+{
+    if (capture_buffer == GL_FRONT)
+    {
+        capture_buffer = GL_BACK;
+    } else {
+        capture_buffer = GL_FRONT;
+    }
+}
+
+
++(void)handleFlip
+{
+    NSLog(@"FLIP IN PAYLOAD");
+}
+
 
 + (void)load {
     

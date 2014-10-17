@@ -28,12 +28,48 @@
 	<dict>
 		<key>Events</key>
 		<dict>
+			<key>SASIchbf</key>
+			<dict>
+				<key>Context</key>
+				<string>Process</string>
+				<key>Handler</key>
+				<string>SASIhandleChbf</string>
+				<key>ThreadSafe</key>
+				<false/>
+			</dict>
+			<key>SASIofst</key>
+			<dict>
+				<key>Context</key>
+				<string>Process</string>
+				<key>Handler</key>
+				<string>SASIhandleOfst</string>
+				<key>ThreadSafe</key>
+				<false/>
+			</dict>
+			<key>SASIflip</key>
+			<dict>
+				<key>Context</key>
+				<string>Process</string>
+				<key>Handler</key>
+				<string>SASIhandleFlip</string>
+				<key>ThreadSafe</key>
+				<false/>
+			</dict>
 			<key>SASIinjc</key>
 			<dict>
 				<key>Context</key>
 				<string>Process</string>
 				<key>Handler</key>
 				<string>SASIhandleInject</string>
+				<key>ThreadSafe</key>
+				<false/>
+			</dict>
+			<key>SASIreso</key>
+			<dict>
+				<key>Context</key>
+				<string>Process</string>
+				<key>Handler</key>
+				<string>SASIhandleReso</string>
 				<key>ThreadSafe</key>
 				<false/>
 			</dict>

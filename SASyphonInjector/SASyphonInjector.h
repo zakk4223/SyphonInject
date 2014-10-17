@@ -27,6 +27,4 @@
 
 @interface SASyphonInjector : NSObject
 
-
-
 @end
