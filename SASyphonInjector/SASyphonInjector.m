@@ -51,6 +51,7 @@ static Class injectedClass;
 OSErr SASIhandleChbf(const AppleEvent *ev, AppleEvent *reply, long refcon)
 {
     [injectedClass changeBuffer];
+    return noErr;
 }
 
 

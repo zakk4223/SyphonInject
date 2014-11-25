@@ -77,31 +77,66 @@
     
     [sbapp setDelegate:self];
     
-    
-    /*
-     NSString *scriptString = [[NSString alloc] initWithFormat:@"tell application \"%s\" to «event SASIinjc»", [self.injectTarget.localizedName UTF8String]];
-     
-     
-     NSAppleScript *scriptObj = [[NSAppleScript alloc] initWithSource:scriptString];
-     
-     [scriptObj executeAndReturnError:nil];
-     */
-    
-    
-    //[sbapp setTimeout:10*60];
-    
-    //[sbapp setSendMode:kAEWaitReply];
-    //[sbapp sendEvent:'ascr' id:'gdut' parameters:0];
-//    [sbapp setSendMode:kAENoReply];
-  //  [sbapp sendEvent:'SASI' id:'injc' parameters:0];
-
-    
-    
 }
+
+
+
 - (void)eventDidFail:(const AppleEvent *)event withError:(NSError *)error
 {
         
     return;
+}
+
+- (IBAction)doChangeDimensions:(id)sender
+{
+    
+    for (NSRunningApplication *toInject in applicationArrayController.selectedObjects)
+    {
+        
+        
+        
+        pid_t pid = toInject.processIdentifier;
+        
+        SBApplication *sbapp = [SBApplication applicationWithProcessIdentifier:pid];
+        
+        [sbapp setDelegate:self];
+        
+        
+        
+        
+        [sbapp setTimeout:10*60];
+        
+        [sbapp setSendMode:kAENoReply];
+        [sbapp sendEvent:'SASI' id:'ofst' parameters:'xofs', @(self.x_offset), 'yofs', @(self.y_offset), 0];
+        [sbapp sendEvent:'SASI' id:'reso' parameters:'wdth', @(self.width), 'hght', @(self.height), 0];
+        
+    }
+
+    
+}
+
+- (IBAction)doChangeBuffer:(id)sender
+{
+    
+    for (NSRunningApplication *toInject in applicationArrayController.selectedObjects)
+    {
+        
+        
+        
+        pid_t pid = toInject.processIdentifier;
+        
+        SBApplication *sbapp = [SBApplication applicationWithProcessIdentifier:pid];
+        
+        [sbapp setDelegate:self];
+        
+        
+        
+        
+        [sbapp setTimeout:10*60];
+        
+        [sbapp setSendMode:kAENoReply];
+        [sbapp sendEvent:'SASI' id:'chbf' parameters:0];
+    }
 }
 
 - (IBAction)doInject:(id)sender
@@ -130,5 +165,6 @@
     }
     
 }
+
 
 @end

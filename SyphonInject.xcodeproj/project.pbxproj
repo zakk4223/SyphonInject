@@ -731,6 +731,7 @@
 				INFOPLIST_FILE = "SASyphonInjector/SASyphonInjector-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/ScriptingAdditions";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.9;
 				WRAPPER_EXTENSION = osax;
 			};
 			name = Debug;
@@ -746,6 +747,7 @@
 				INFOPLIST_FILE = "SASyphonInjector/SASyphonInjector-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/ScriptingAdditions";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.9;
 				WRAPPER_EXTENSION = osax;
 			};
 			name = Release;
@@ -759,6 +761,7 @@
 				GCC_PREFIX_HEADER = "SyphonInjectCmd/SyphonInjectCmd-Prefix.pch";
 				HEADER_SEARCH_PATHS = "mach_inject/**";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.9;
 			};
 			name = Debug;
 		};
@@ -771,6 +774,7 @@
 				GCC_PREFIX_HEADER = "SyphonInjectCmd/SyphonInjectCmd-Prefix.pch";
 				HEADER_SEARCH_PATHS = "mach_inject/**";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.9;
 			};
 			name = Release;
 		};
@@ -845,7 +849,7 @@
 				INFOPLIST_FILE = "SyphonInject/SyphonInject-Info.plist";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx10.9;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -862,7 +866,7 @@
 				INFOPLIST_FILE = "SyphonInject/SyphonInject-Info.plist";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx10.8;
+				SDKROOT = macosx10.9;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -881,6 +885,7 @@
 				GCC_PREFIX_HEADER = "SyphonPayload/SyphonPayload-Prefix.pch";
 				INFOPLIST_FILE = "SyphonPayload/SyphonPayload-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.9;
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = Debug;
@@ -899,6 +904,7 @@
 				GCC_PREFIX_HEADER = "SyphonPayload/SyphonPayload-Prefix.pch";
 				INFOPLIST_FILE = "SyphonPayload/SyphonPayload-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.9;
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = Release;

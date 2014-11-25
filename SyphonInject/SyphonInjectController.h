@@ -38,10 +38,17 @@ THE SOFTWARE.
 @property (retain) NSArray *runningApplications;
 @property (retain) NSRunningApplication *injectTarget;
 @property (retain) NSWorkspace *sharedWorkspace;
+@property (assign) int x_offset;
+@property (assign) int y_offset;
+@property (assign) int width;
+@property (assign) int height;
 
 
+
+- (IBAction)doChangeBuffer:(id)sender;
 
 - (IBAction)doInject:(id)sender;
+- (IBAction)doChangeDimensions:(id)sender;
 
 - (void)eventDidFail:(const AppleEvent *)event withError:(NSError *)error;
 
