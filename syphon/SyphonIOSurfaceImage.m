@@ -97,6 +97,16 @@
 	[super dealloc];
 }
 
+- (IOSurfaceID)surfaceID
+{
+    if (_surface)
+    {
+        return IOSurfaceGetID(_surface);
+    }
+    return 0;
+}
+
+
 - (GLuint)textureName
 {
 	return _texture;

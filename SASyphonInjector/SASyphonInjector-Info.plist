@@ -15,11 +15,11 @@
 	<key>CFBundlePackageType</key>
 	<string>osax</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>1.2</string>
 	<key>CFBundleSignature</key>
 	<string>BAGE</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>1.2</string>
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2013 Zakk. All rights reserved.</string>
 	<key>OSAScriptingDefinition</key>
@@ -37,12 +37,12 @@
 				<key>ThreadSafe</key>
 				<false/>
 			</dict>
-			<key>SASIofst</key>
+			<key>SASIfast</key>
 			<dict>
 				<key>Context</key>
 				<string>Process</string>
 				<key>Handler</key>
-				<string>SASIhandleOfst</string>
+				<string>SASIhandleFast</string>
 				<key>ThreadSafe</key>
 				<false/>
 			</dict>
@@ -61,6 +61,24 @@
 				<string>Process</string>
 				<key>Handler</key>
 				<string>SASIhandleInject</string>
+				<key>ThreadSafe</key>
+				<false/>
+			</dict>
+			<key>SASIofst</key>
+			<dict>
+				<key>Context</key>
+				<string>Process</string>
+				<key>Handler</key>
+				<string>SASIhandleOfst</string>
+				<key>ThreadSafe</key>
+				<false/>
+			</dict>
+			<key>SASIqury</key>
+			<dict>
+				<key>Context</key>
+				<string>Process</string>
+				<key>Handler</key>
+				<string>SASIhandleQuery</string>
 				<key>ThreadSafe</key>
 				<false/>
 			</dict>

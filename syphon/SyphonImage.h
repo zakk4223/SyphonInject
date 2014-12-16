@@ -40,6 +40,8 @@
 	
 }
 
+@property (readonly) IOSurfaceID surfaceID;
+
 /**
  A GLuint representing the texture name. The associated texture is of type GL_TEXTURE_RECTANGLE_ARB.
  */

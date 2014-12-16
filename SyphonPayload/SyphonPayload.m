@@ -45,7 +45,8 @@ int forced_height = 0;
 GLint texture_x_offset = 0;
 GLint texture_y_offset = 0;
 GLenum capture_buffer = GL_FRONT;
-
+int syphon_publish = 1;
+IOSurfaceID surfaceID;
 
 
 
@@ -77,6 +78,8 @@ void __SyphonInjectorPublish(CGLContextObj for_ctx, NSSize texture_size)
     SyphonImage *sImage = [_syphonServer newFrameImage];
     
 
+    
+    
     if (for_ctx != _syphonServer.context)
     {
         NSLog(@"CGL Context changed CTX: %p syphon %p", for_ctx, _syphonServer.context);
@@ -116,8 +119,14 @@ void __SyphonInjectorPublish(CGLContextObj for_ctx, NSSize texture_size)
     
     glCopyTexSubImage2D(GL_TEXTURE_RECTANGLE_EXT, 0, 0,0,texture_x_offset, texture_y_offset, texture_size.width, texture_size.height);
     
-    [_syphonServer bindToDrawFrameOfSize:texture_size];
-    [_syphonServer unbindAndPublish];
+    if (syphon_publish || (surfaceID != sImage.surfaceID))
+    {
+        [_syphonServer bindToDrawFrameOfSize:texture_size];
+        [_syphonServer unbindAndPublish];
+    }
+    
+    surfaceID = sImage.surfaceID;
+    
 
     glBindTexture(GL_TEXTURE_RECTANGLE_EXT, saved_texture);
     
@@ -234,6 +243,18 @@ CGLError CGLFlushDrawableOverride(CGLContextObj ctx)
 @implementation SyphonPayload
 
 
+
++(void) toggleFast
+{
+    syphon_publish = !syphon_publish;
+}
+
++(UInt32) getSurfaceID
+{
+    return surfaceID;
+}
+
+
 +(void) setOffsetX:(int)x OffsetY:(int)y
 {
     texture_x_offset = x;
@@ -256,6 +277,21 @@ CGLError CGLFlushDrawableOverride(CGLContextObj ctx)
     } else {
         capture_buffer = GL_FRONT;
     }
+}
+
++(NSDictionary *)queryParams
+{
+    int buf_num;
+    
+    buf_num = (capture_buffer == GL_FRONT ? 1 : 0);
+    
+    return @{@"x_offset": @(texture_x_offset),
+             @"y_offset": @(texture_y_offset),
+             @"width":  @(forced_width),
+             @"height": @(forced_height),
+             @"buffer": @(buf_num),
+             @"fast": @(!syphon_publish)
+             };
 }
 
 

@@ -34,8 +34,8 @@
 +(void) setWidth:(int)width height:(int)height;
 +(void) setOffsetX:(int)x OffsetY:(int)y;
 +(void) changeBuffer;
-
-
++(void) toggleFast;
++(NSDictionary *)queryParams;
 
 @end
 
@@ -46,6 +46,49 @@ static Class injectedClass;
 @implementation SASyphonInjector
 
 @end
+
+
+
+OSErr SASIhandleQuery(const AppleEvent *ev, AppleEvent *reply, long refcon)
+{
+    if (reply)
+    {
+        NSDictionary *injectInfo = [injectedClass queryParams];
+        
+        
+        
+        int32_t width = [[injectInfo objectForKey:@"width"] intValue];
+        
+        int32_t height = [[injectInfo objectForKey:@"height"] intValue];
+
+        int32_t x_offset = [[injectInfo objectForKey:@"x_offset"] intValue];
+        
+        int32_t y_offset = [[injectInfo objectForKey:@"x_offset"] intValue];
+        
+        int32_t buffer = [[injectInfo objectForKey:@"buffer"] intValue];
+
+        int32_t isFast = [[injectInfo objectForKey:@"fast"] intValue];
+
+
+        AEPutParamPtr(reply, 'wdth', typeSInt32, &width, sizeof(width));
+        AEPutParamPtr(reply, 'hght', typeSInt32, &height, sizeof(height));
+        
+        AEPutParamPtr(reply, 'xofs', typeSInt32, &x_offset, sizeof(x_offset));
+        AEPutParamPtr(reply, 'yofs', typeSInt32, &y_offset, sizeof(y_offset));
+        AEPutParamPtr(reply, 'ijbf', typeSInt32, &buffer, sizeof(buffer));
+        AEPutParamPtr(reply, 'ijft', typeSInt32, &isFast, sizeof(isFast));
+        
+    }
+    
+    return noErr;
+}
+
+
+OSErr SASIhandleFast(const AppleEvent *ev, AppleEvent *reply, long refcon)
+{
+    [injectedClass toggleFast];
+    return noErr;
+}
 
 
 OSErr SASIhandleChbf(const AppleEvent *ev, AppleEvent *reply, long refcon)
@@ -62,6 +105,9 @@ OSErr SASIhandleOfst(const AppleEvent *ev, AppleEvent *reply, long refcon)
     
     AEGetParamPtr(ev, 'xofs', typeSInt32, NULL, &x, sizeof(x), NULL);
     AEGetParamPtr(ev, 'yofs', typeSInt32, NULL, &y, sizeof(y), NULL);
+    
+
+    
 
     [injectedClass setOffsetX:x OffsetY:y];
     return noErr;

@@ -42,12 +42,10 @@
     if (self = [super init])
     {
     
+        self.applicationPredicate = [NSPredicate predicateWithFormat:@"activationPolicy = %@", @(NSApplicationActivationPolicyRegular)];
+        
+        
         self.sharedWorkspace = [NSWorkspace sharedWorkspace];
-        self.runningApplications = [self.sharedWorkspace runningApplications];
-        [[self.sharedWorkspace notificationCenter] addObserver:self
-                                           selector:@selector(appLaunched:)
-                                               name:NSWorkspaceDidLaunchApplicationNotification
-                                             object:self.sharedWorkspace];
         
     }
     return self;
@@ -58,26 +56,7 @@
 }
 
 
--(void) appLaunched:(NSNotification *)notification
-{
-    NSDictionary *userInfo = [notification userInfo];
-    
-    NSString *bundleId = [userInfo objectForKey:@"NSApplicationBundleIdentifier"];
-    
-    NSLog(@"BUNDLE ID %@", bundleId);
-    
-    
-    pid_t pid = [[userInfo objectForKey:@"NSApplicationProcessIdentifier"] intValue];
-    
-    
-    NSLog(@"PROC ID %d", pid);
-    
-    
-    SBApplication *sbapp = [SBApplication applicationWithProcessIdentifier:pid];
-    
-    [sbapp setDelegate:self];
-    
-}
+
 
 
 
@@ -85,6 +64,32 @@
 {
         
     return;
+}
+
+
+- (IBAction)doFastToggle:(id)sender
+{
+    
+    for (NSRunningApplication *toInject in applicationArrayController.selectedObjects)
+    {
+        
+        
+        
+        pid_t pid = toInject.processIdentifier;
+        
+        SBApplication *sbapp = [SBApplication applicationWithProcessIdentifier:pid];
+        
+        [sbapp setDelegate:self];
+        
+        
+        
+        
+        [sbapp setTimeout:10*60];
+        
+        [sbapp setSendMode:kAENoReply];
+        [sbapp sendEvent:'SASI' id:'fast' parameters:0];
+        
+    }
 }
 
 - (IBAction)doChangeDimensions:(id)sender
@@ -110,7 +115,7 @@
         [sbapp sendEvent:'SASI' id:'ofst' parameters:'xofs', @(self.x_offset), 'yofs', @(self.y_offset), 0];
         [sbapp sendEvent:'SASI' id:'reso' parameters:'wdth', @(self.width), 'hght', @(self.height), 0];
         
-    }
+     }
 
     
 }

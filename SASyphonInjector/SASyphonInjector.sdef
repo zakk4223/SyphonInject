@@ -14,7 +14,9 @@
         </command>
         
         <command name="change SyphonInject capture buffer" code="SASIchbf"/>
+        <command name="toggle fast Inject method" code="SASIfast"/>
         
-
+        
+        
     </suite>
 </dictionary>

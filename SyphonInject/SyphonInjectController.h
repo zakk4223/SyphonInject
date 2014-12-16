@@ -35,9 +35,10 @@ THE SOFTWARE.
 
 
 @property (assign) int injectPID;
-@property (retain) NSArray *runningApplications;
 @property (retain) NSRunningApplication *injectTarget;
 @property (retain) NSWorkspace *sharedWorkspace;
+@property (strong) NSPredicate *applicationPredicate;
+
 @property (assign) int x_offset;
 @property (assign) int y_offset;
 @property (assign) int width;
@@ -51,6 +52,7 @@ THE SOFTWARE.
 - (IBAction)doChangeDimensions:(id)sender;
 
 - (void)eventDidFail:(const AppleEvent *)event withError:(NSError *)error;
+- (IBAction)doFastToggle:(id)sender;
 
 
 @end

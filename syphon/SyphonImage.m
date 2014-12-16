@@ -33,4 +33,6 @@
 @implementation SyphonImage
 - (GLuint)textureName {return 0;}
 - (NSSize)textureSize {return NSMakeSize(0, 0);}
+- (IOSurfaceID)surfaceID {return 0;};
+
 @end
