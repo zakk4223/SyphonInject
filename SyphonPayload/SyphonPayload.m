@@ -166,8 +166,9 @@ void __SyphonInjectorPublish(CGLContextObj for_ctx, NSSize texture_size)
     {
         my_size = NSMakeSize(forced_width, forced_height);
     } else {
-        
-        my_size = self.view.bounds.size;
+        GLint renderBufDim[4];
+        glGetIntegerv(GL_VIEWPORT, renderBufDim);
+        my_size = NSMakeSize(renderBufDim[2], renderBufDim[3]);
     }
 
     if (capture_buffer == GL_BACK)
