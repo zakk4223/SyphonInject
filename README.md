@@ -1,6 +1,8 @@
 SyphonInject
 ============
 
+****SyphonInject NO LONGER WORKS IN macOS 10.14 (Mojave). Apple closed up the loophole that allows scripting additions in global directories to load into any process. Trying to inject into any process will silently fail. It will work if SIP is disabled, but that's a terrible idea and I'm not going to suggest or help anyone do that****
+
 
 ****BINARIES HERE**** http://krylon.rsdio.com/zakk/syphoninject/
 
